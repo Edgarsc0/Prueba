@@ -44,8 +44,8 @@
             if(!navigator.geolocation){
                 alert("Tu navegador no soporta la geolocalizacion");
             }else{
-                navigator.geolocation.getCurrentPosition(onSucces,onError);
-                function onSucces(position){
+                navigator.geolocation.getCurrentPosition(onSucces2,onError2);
+                function onSucces2(position){
                     const {
                         latitude,
                         longitude
@@ -53,7 +53,7 @@
                     document.getElementById('cor2-lat').value=`${latitude}`//`Your location: (${latitude},${longitude})`
                     document.getElementById('cor2-lon').value=`${longitude}`//`Your location: (${latitude},${longitude})`
                 }
-                function onError(){
+                function onError2(){
                     document.getElementById('cor2').value='No se obtuvieron las coordenadas';
                 }
             }
