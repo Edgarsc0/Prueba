@@ -14,7 +14,7 @@
     <input type="text" id="cor2-lon" readonly="readonly" placeholder="Coordenadas" style="width: 500px;">
 
 
-    <input type="button" value="Obtener diferencia" onclick="diferencia()">
+    <input type="button" value="Obtener diferencia" onclick="Prueba()">
     <input type="text" id="dif" readonly="readonly" placeholder="diferencia" style="width: 500px;">
     <input type="text" id="diflong" readonly="readonly" placeholder="diferencia" style="width: 500px;">
 
@@ -61,9 +61,10 @@
         function diferencia(){
             /*document.getElementById('dif').value="Diferencia latitud: "+(parseInt(document.getElementById('cor1-lat').value)
             -parseInt(document.getElementById('cor2-lat').value))+", diferencia long:"+(parseInt(document.getElementById('cor2-lon').value)-parseInt(document.getElementById('cor2-lon').value))*/
-            document.getElementById('dif').value=(parseInt(document.getElementById('cor1-lat').value)-parseInt(document.getElementById('cor2-lat').value)).toFixed(7)
-            document.getElementById('diflong').value=(parseInt(document.getElementById('cor2-lon').value)-parseInt(document.getElementById('cor2-lon').value)).toFixed(7)
+            document.getElementById('dif').value=(parseInt(document.getElementById('cor1-lat').value)-parseInt(document.getElementById('cor2-lat').value))*10^7
+            document.getElementById('diflong').value=(parseInt(document.getElementById('cor2-lon').value)-parseInt(document.getElementById('cor2-lon').value))*10^7
         }
+
     </script>
 
 </body>
