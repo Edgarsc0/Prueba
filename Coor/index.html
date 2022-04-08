@@ -61,8 +61,8 @@
         function diferencia(){
             /*document.getElementById('dif').value="Diferencia latitud: "+(parseInt(document.getElementById('cor1-lat').value)
             -parseInt(document.getElementById('cor2-lat').value))+", diferencia long:"+(parseInt(document.getElementById('cor2-lon').value)-parseInt(document.getElementById('cor2-lon').value))*/
-            document.getElementById('dif').value=(parseInt(document.getElementById('cor1-lat').value)-parseInt(document.getElementById('cor2-lat').value)).toFixed(50)
-            document.getElementById('diflong').value=(parseInt(document.getElementById('cor2-lon').value)-parseInt(document.getElementById('cor2-lon').value)).toFixed(50)
+            document.getElementById('dif').value=(parseInt(document.getElementById('cor1-lat').value.toFixed(12))-parseInt(document.getElementById('cor2-lat').value.toFixed(12))).toFixed(50)
+            document.getElementById('diflong').value=(parseInt(document.getElementById('cor2-lon').value.toFixed(12))-parseInt(document.getElementById('cor2-lon').value.toFixed(12))).toFixed(50)
         }
     </script>
 
