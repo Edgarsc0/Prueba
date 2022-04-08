@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba coordenadas</title>
+
+    <input type="button" value="Obtener Coordenadas" onclick="obtenerC()">
+    <input type="text" id="cor" readonly="readonly" placeholder="Coordenadas" style="width: 500px;">
+
+</head>
+<body>
+
+    <script>
+        function obtenerC(){
+            if(!navigator.geolocation){
+                alert("Tu navegador no soporta la geolocalizacion");
+            }else{
+                navigator.geolocation.getCurrentPosition(onSucces,onError);
+                function onSucces(position){
+                    const {
+                        latitude,
+                        longitude
+                    }=position.coords;
+                    document.getElementById('cor').value=`Your location: (${latitude},${longitude})`
+                }
+                function onError(){
+                    document.getElementById('cor').value='No se obtuvieron las coordenadas';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
