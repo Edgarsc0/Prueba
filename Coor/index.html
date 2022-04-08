@@ -6,14 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba coordenadas</title>
 
-    <input type="button" value="Obtener Coordenadas" onclick="obtenerC()">
-    <input type="text" id="cor" readonly="readonly" placeholder="Coordenadas" style="width: 500px;">
+    <input type="button" value="Obtener Coordenadas 1" onclick="obtenerC1()">
+    <input type="text" id="cor1-lat" readonly="readonly" placeholder="Coordenadas" style="width: 500px;">
+    <input type="text" id="cor1-lon" readonly="readonly" placeholder="Coordenadas" style="width: 500px;">
+    <input type="button" value="Obtener Coordenadas 2" onclick="obtenerC2()">
+    <input type="text" id="cor2-lat" readonly="readonly" placeholder="Coordenadas" style="width: 500px;">
+    <input type="text" id="cor2-lon" readonly="readonly" placeholder="Coordenadas" style="width: 500px;">
+
+
+    <input type="button" value="Obtener diferencia" onclick="diferencia()">
+    <input type="text" id="dif" readonly="readonly" placeholder="diferencia" style="width: 500px;">
 
 </head>
 <body>
 
     <script>
-        function obtenerC(){
+        function obtenerC1(){
             if(!navigator.geolocation){
                 alert("Tu navegador no soporta la geolocalizacion");
             }else{
@@ -23,12 +31,34 @@
                         latitude,
                         longitude
                     }=position.coords;
-                    document.getElementById('cor').value=`Your location: (${latitude},${longitude})`
+                    document.getElementById('cor1-lat').value=`${latitude}`//`Your location: (${latitude},${longitude})`
+                    document.getElementById('cor1-lon').value=`${longitude}`//`Your location: (${latitude},${longitude})`
                 }
                 function onError(){
-                    document.getElementById('cor').value='No se obtuvieron las coordenadas';
+                    document.getElementById('cor1').value='No se obtuvieron las coordenadas';
                 }
             }
+        }
+        function obtenerC2(){
+            if(!navigator.geolocation){
+                alert("Tu navegador no soporta la geolocalizacion");
+            }else{
+                navigator.geolocation.getCurrentPosition(onSucces,onError);
+                function onSucces(position){
+                    const {
+                        latitude,
+                        longitude
+                    }=position.coords;
+                    document.getElementById('cor2-lat').value=`${latitude}`//`Your location: (${latitude},${longitude})`
+                    document.getElementById('cor2-lon').value=`${longitude}`//`Your location: (${latitude},${longitude})`
+                }
+                function onError(){
+                    document.getElementById('cor2').value='No se obtuvieron las coordenadas';
+                }
+            }
+        }
+        function diferencia(){
+            document.getElementById('dif').value="Diferencia latitud: "+(parseInt(document.getElementById('cor1-lat').value)-parseInt(document.getElementById('cor2-lat').value))+", diferencia long:"+(parseInt(document.getElementById('cor2-lon').value)-parseInt(document.getElementById('cor2-lon').value))
         }
     </script>
 
