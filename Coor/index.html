@@ -32,8 +32,10 @@
                         latitude,
                         longitude
                     }=position.coords;
-                    document.getElementById('cor1-lat').value=`${latitude}`//`Your location: (${latitude},${longitude})`
-                    document.getElementById('cor1-lon').value=`${longitude}`//`Your location: (${latitude},${longitude})`
+                    /*document.getElementById('cor1-lat').value=`${latitude}`//`Your location: (${latitude},${longitude})`
+                    document.getElementById('cor1-lon').value=`${longitude}`//`Your location: (${latitude},${longitude})`*/
+                    document.getElementById('cor1-lat').value=`${latitude}`
+                    document.getElementById('cor1-lon').value=`${longitude}`
                 }
                 function onError(){
                     document.getElementById('cor1').value='No se obtuvieron las coordenadas';
