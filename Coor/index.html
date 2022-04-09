@@ -35,8 +35,8 @@
                     }=position.coords;
                     /*document.getElementById('cor1-lat').value=`${latitude}`//`Your location: (${latitude},${longitude})`
                     document.getElementById('cor1-lon').value=`${longitude}`//`Your location: (${latitude},${longitude})`*/
-                    document.getElementById('cor1-lat').value=(parseFloat(`${latitude}`)).toFixed(50);
-                    document.getElementById('cor1-lon').value=(parseFloat(`${longitude}`)).toFixed(50);
+                    document.getElementById('cor1-lat').value=(parseFloat(`${latitude}`)).toFixed(100);
+                    document.getElementById('cor1-lon').value=(parseFloat(`${longitude}`)).toFixed(100);
                 }
                 function onError(){
                     document.getElementById('cor1').value='No se obtuvieron las coordenadas';
@@ -53,8 +53,8 @@
                         latitude,
                         longitude
                     }=position.coords;
-                    document.getElementById('cor2-lat').value=(parseFloat(`${latitude}`)).toFixed(50)//`Your location: (${latitude},${longitude})`
-                    document.getElementById('cor2-lon').value=(parseFloat(`${longitude}`)).toFixed(50)//`Your location: (${latitude},${longitude})`
+                    document.getElementById('cor2-lat').value=(parseFloat(`${latitude}`)).toFixed(100)//`Your location: (${latitude},${longitude})`
+                    document.getElementById('cor2-lon').value=(parseFloat(`${longitude}`)).toFixed(100)//`Your location: (${latitude},${longitude})`
                 }
                 function onError2(){
                     document.getElementById('cor2').value='No se obtuvieron las coordenadas';
@@ -62,8 +62,8 @@
             }
         }
         function Prueba(){
-            var difLat=(parseFloat(document.getElementById('cor2-lat').value)).toFixed(50)-(parseFloat(document.getElementById('cor1-lat').value)).toFixed(20);
-            var difLon=(parseFloat(document.getElementById('cor2-lon').value)).toFixed(50)-(parseFloat(document.getElementById('cor1-lon').value)).toFixed(20);
+            var difLat=(parseFloat(document.getElementById('cor2-lat').value)).toFixed(100)-(parseFloat(document.getElementById('cor1-lat').value)).toFixed(100);
+            var difLon=(parseFloat(document.getElementById('cor2-lon').value)).toFixed(100)-(parseFloat(document.getElementById('cor1-lon').value)).toFixed(100);
             document.getElementById('dif').value=difLat;
             document.getElementById('diflong').value=difLon;
             //alert((parseFloat(document.getElementById('cor1-lat').value).toFixed(20)));
