@@ -64,8 +64,8 @@
         function Prueba(){
             var difLat=(parseFloat(document.getElementById('cor2-lat').value)).toPrecision(100)-(parseFloat(document.getElementById('cor1-lat').value)).toPrecision(100);
             var difLon=(parseFloat(document.getElementById('cor2-lon').value)).toPrecision(100)-(parseFloat(document.getElementById('cor1-lon').value)).toPrecision(100);
-            document.getElementById('dif').value=difLat;
-            document.getElementById('diflong').value=difLon;
+            document.getElementById('dif').value=difLat.toPrecision(100);
+            document.getElementById('diflong').value=difLon.toPrecision(100);
             //alert((parseFloat(document.getElementById('cor1-lat').value).toFixed(20)));
         }
 
