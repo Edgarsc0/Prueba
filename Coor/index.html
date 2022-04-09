@@ -58,11 +58,11 @@
                 }
             }
         }
-        function diferencia(){
-            /*document.getElementById('dif').value="Diferencia latitud: "+(parseInt(document.getElementById('cor1-lat').value)
-            -parseInt(document.getElementById('cor2-lat').value))+", diferencia long:"+(parseInt(document.getElementById('cor2-lon').value)-parseInt(document.getElementById('cor2-lon').value))*/
-            document.getElementById('dif').value=parseInt(document.getElementById('cor1-lat').value)-parseInt(document.getElementById('cor2-lat').value)
-            document.getElementById('diflong').value=parseInt(document.getElementById('cor2-lon').value)-parseInt(document.getElementById('cor2-lon').value)
+        function Prueba(){
+            var difLat=parseFloat(document.getElementById('cor2-lat').value)-parseFloat(document.getElementById('cor1-lat').value);
+            var difLon=parseFloat(document.getElementById('cor2-lon').value)-parseFloat(document.getElementById('cor1-lon').value);
+            document.getElementById('dif').value=difLat;
+            document.getElementById('diflong').value=difLon;
         }
 
     </script>
